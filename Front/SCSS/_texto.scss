@@ -1,0 +1,31 @@
+/*Variables*/
+$fuente:'Open Sans Condensed', sans-serif;
+$fuenteEnc: 'Trispace', sans-serif;
+$fuenteSubenc: 'Baloo Chettan 2', cursive;
+
+
+/*Encabezados*/
+
+h2
+{
+    font-family: $fuenteEnc;
+}
+h4, h3
+{
+    font-family: $fuenteSubenc;
+}
+
+
+/*TEXTO GENERAL <p>*/
+.texto{
+    display: grid;
+    grid-template-columns: 700px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: $fuente;
+    text-align: justify;
+    justify-content: center;
+    font-weight: 2px;
+    font-size: 17px;
+}
+

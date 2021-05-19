@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "..\\.."
+		},
+		{
+			"path": "..\\..\\..\\Proyecto Riego\\Web"
+		}
+	],
+	"settings": {
+		"arduino.defaultBaudRate": 19200,
+		"C_Cpp.intelliSenseEngineFallback": "Enabled",
+		"liveServer.settings.multiRootWorkspaceName": "JS Curso"
+	}
+}

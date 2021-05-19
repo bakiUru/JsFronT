@@ -1,0 +1,456 @@
+/*Llamada de archivos SCSS*/
+@import "menu";
+@import "footer";
+@import "texto";
+
+
+
+/*Variables*/
+$colorTit: rgb(26, 32, 110);
+$colorTable: rgba(255, 255, 255, 0.774);
+
+/*Imagen Fondo*/
+$fondoLogin:url(../Images/grassLogin.jpg);
+$fondoError404:url(../Images/e4041.jpg);
+
+/*-------------------------------Pag Error404----------------------------*/
+.contE404{
+    display: grid;
+    min-height: 100vh;
+    background-image: $fondoError404;
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-content: center;
+    grid-template-areas:
+    "titulo"
+    "cuerpo";
+    grid-template-rows: 400px 200px;
+    grid-gap: 10px;
+        h1{
+            grid-area: titulo;
+            margin-top: 200px;
+            font-size: 75px;
+            color: rgb(251, 251, 251);
+            text-shadow: 2px 15px 5px rgba(0, 0, 0, 0.644);
+        }
+        .enlaceE404{
+            grid-area: cuerpo;
+            border: 5px;
+            font-size: 30px;
+            color: rgb(0, 31, 116);
+            text-transform: uppercase;
+            text-shadow: 2px 12px 10px rgb(0, 2, 0);
+            text-align: right;
+            .enlaceE404__boton{
+                padding: 10px 15px;
+                margin-top: 40px;
+                border: none;
+                border: solid 5px;
+                color: white;
+                cursor: pointer;
+                outline: none;
+                border-radius: 20%;
+                font-size: 30px;
+                outline: none;
+                -webkit-appearance: button;
+                -moz-appearance: button;
+                appearance: button;
+
+                a{
+                    font-family: $fuente;
+                    text-decoration: none;
+
+                }
+                a:visited{
+                    color: black;
+                }
+
+                a:hover{
+                    color: white;
+
+                }
+                
+
+            }
+            .enlaceE404__boton:hover{
+                background-color: rgb(17, 133, 228);
+                font-size: 35px;
+                transition: 0.7s;
+
+            }
+        }
+
+}
+
+
+
+/*-------------------------------Pag Sistemas----------------------------*/
+.contenedorSist{
+    padding-top: 200px;
+    min-height: 100vh;
+    display: grid;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 15%;
+    background-image: radial-gradient(white,slategray);
+    
+    grid-template-areas: 
+    "titulo"
+    "Lista"
+    "info"
+    ;
+    grid-template-rows: 0px 950px auto;
+    h2{
+        
+        height: 80px;
+        grid-area: titulo;
+        margin-top: -150px;
+        justify-items: center;
+        align-items: center;
+        text-align: center;
+        color: $colorTit;
+        font-size: 35px;
+        font-weight: bold;
+        text-shadow: 2px 5px 5px #ccc;
+
+    /*Animacion Titulo*/
+        animation: fadeOut;
+        animation-duration: 1s;
+        animation-delay: 0.9s;
+    }
+    .contenedorSist__lista{
+        height: 300px;
+        grid-area: Lista;
+        display: grid;
+        grid-template-areas: 
+        "Lista1 Lista2";
+        grid-template-columns: 550px 200px;
+        grid-gap: 30x;
+        list-style: square;
+
+        .L1__tit{
+            font-size: 35px;
+            font-family: $fuenteSubenc;
+        }
+        li{
+            font-size: 20px;
+            font-weight: bold;
+            list-style: square;
+        }
+        .L1{
+            
+            grid-area: Lista1;
+            justify-items: center;
+            align-items: start;
+            columns: 1;
+            
+     
+        }
+        /*Intente modificar el numero de la lista mediante bucle for*/
+        $i : 2;
+        .L2-#{$i}{
+            @for $i from 1 through 2{
+            list-style: " " + ($i + 2)  + ". " ;
+            } 
+        } 
+        .L2{
+            
+            grid-area: Lista2;
+            justify-items: center;
+            align-items: start;
+            
+        }
+       
+    }
+    
+    .contenedorSist__inf{
+        grid-area: info;
+        h3{
+            font-size: 35px;
+            text-shadow: 2px 5px 5px rgba(10, 25, 107, 0.507);
+        }
+        
+        
+        .contenedorSist__inf1
+        {
+            text-align: end;
+            
+        }
+    }
+}
+
+
+/*-------------------------------Pag Login Registro----------------------------*/
+
+.login{
+    background-image: $fondoLogin;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+
+    .contenedor__todo{
+        width: 100%;
+        max-width: 800px;
+        margin: auto;
+        margin-top: 200px;
+        position: relative;
+
+        .caja__trasera{
+            width: 100%;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            background-color: rgba(1, 48, 255, 0.42);
+
+            div{
+                margin: 100px 40px;
+                color: white;
+                transition: all 500ms;
+
+                p, button{
+                    margin-top: 30px;
+                }
+
+                h3{
+                    font-weight: 400px;
+                    font-size: 26px;
+                }
+            }
+
+            button{
+                padding: 10px 40px;
+                border: 2px solid white;
+                background: transparent;
+                font-size: 14px;
+                font-weight: 600;
+                cursor: pointer;
+                color: white;
+                outline: none;/*quita linea al apretar boton*/
+                transition: all 300ms; 
+            }
+        }
+    
+    }
+    
+    .caja__trasera button:hover{
+        background:#fff;
+        color: #46a2fd;
+    }
+    
+    /*Formularios*/
+    .contenedor__login-register{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 380px;
+        position: relative;
+        top: -185px;
+        left: 10px;
+        transition: left 500ms cubic-bezier(0.175, 0.855, 0.320, 1.275);
+    }
+    
+    .contenedor__login-register{
+        form{
+            width: 100%;
+            padding: 80px 20px;
+            background: white;
+            position: absolute;
+            border-radius: 20px;
+
+
+            h2{
+                font-size: 30px;
+                text-align: center;
+                margin-bottom: 20px;
+                color: #46a2fd;
+            }
+
+            input{
+                width: 100%;
+                margin-top: 20px;
+                padding: 10px;
+                border: none;
+                background: #F2F2F2;
+                font-size: 22px;
+                outline: none;
+            }
+
+            button{
+                padding: 10px 40px;
+                margin-top: 40px;
+                border: none;
+                font-size: 14px;
+                background:#46a2fd;
+                color: white;
+                cursor: pointer;
+                outline: none;
+            }
+        }
+        
+        .formulario__login{
+            opacity: 1;
+            display: block;
+        }
+        
+        .formulario__register{
+            display: none;
+        }
+        
+    }
+    
+
+    } 
+
+
+/*Trabajando en el Responsive */
+
+@media screen and (max-width: 850px){
+    main{
+        margin-top: 50px;
+    }
+
+    .caja__trasera{
+        max-width: 350px;
+        height: 300px;
+        flex-direction: column;
+        margin: auto;
+    }
+    .caja__trasera div{
+        margin: 0px;
+        position: absolute;
+
+    }
+
+    /*Formulario*/
+    .contenedor__login-register {
+        top: -10px;
+        left: -5px;
+        margin: auto;
+    }
+
+    .contenedor__login-register form{
+        position: relative;
+    }
+}
+
+
+
+/*-------------------------------Pag Extra----------------------------*/
+.contenedorExt{
+    padding-top: 200px;
+    min-height: 100vh;
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 15%;
+    background-image: radial-gradient(white,slategray);
+    
+    grid-template-areas: 
+    "titulo"
+    "cont"
+    "recuadro"
+    ;
+    grid-template-rows: 300px 350px 200px;
+    h2{
+        margin-top: -150px;
+        grid-area: titulo;
+        text-align: center;
+        padding: 1rem;
+        color: $colorTit;
+        font-size: 35px;
+        font-weight: bold;
+        text-shadow: 2px 5px 5px #ccc;
+
+    /*Animacion Titulo*/
+        animation: fadeOut;
+        animation-duration: 1s;
+        animation-delay: 0.9s;
+    }
+
+    p{
+        grid-area: titulo;
+        margin-top: -35px;
+        text-align: center;
+        font-size: 25px;
+        align-self: baseline;
+    }
+
+    /*Tabla Ext*/
+.contendorExt__extTable{
+    border: rgb(16, 35, 71);
+    text-align: left;
+    grid-area: cont;
+    margin-top: -150px;
+    width: 50%;
+    justify-self: center;
+    background-color:white ;
+    thead tr th{
+        border: 10px;
+        background-color:rgb(26, 32, 110) ;
+        border-bottom: solid 8px black;
+        text-align: center;
+        padding: 10px;
+        color: $colorTable;
+        font-size: 1.5em;
+        font-family: 'Baloo Chettan 2', cursive;
+    }
+    tbody tr td{
+        padding: 15px;
+        font-size: 1.2em;
+        font-family: 'Righteous', cursive;
+
+        tr:nth-child(odd){
+            background-color: rgba(26, 87, 200, 0.507);
+            
+        }
+    }
+}
+.contendorExt__Infoext{
+    grid-area: recuadro;
+    fieldset{
+        legend{
+            font-size: 2em;
+            font-family: 'Righteous', cursive;
+
+        }
+
+        h4{
+            padding: 5px 0px 0px 3px;
+            font-size: 1.5em;
+            color: $colorTit;
+        }
+    
+        .texto2{
+            grid-template-columns: 700px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding-left: 50px;
+            font-family: 'Open Sans Condensed', sans-serif;
+            text-align: justify;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+    }
+    
+
+}
+
+
+}
+
+
+
+
+
+

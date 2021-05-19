@@ -1,0 +1,759 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap'); /*Titulo*/
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&family=Suez+One&display=swap'); /*Menu*/
+@import url('https://fonts.googleapis.com/css2?family=Trispace:wght@300&display=swap'); /*Encabezados*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap'); /*Texto*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh;
+    background-image:linear-gradient(to bottom, rgba(255,255,255,1), rgba(27, 27, 114, 0.897))
+}
+
+/*Responsive Media Querie*/
+
+@media (min-width: 320px)
+{
+
+    header{
+        height: auto;
+        width: auto;
+    }
+    body{
+        height: auto;
+        width: auto;
+    }
+    nav{
+        height: auto;
+        align-items: center;
+        flex-direction: column;
+    }
+    .menu{
+            height: auto;
+            width: auto;
+
+        }
+
+}
+
+@media(min-width: 480px)
+{
+
+    header{
+        height: auto;
+        width: auto;
+    }
+    body{
+        height: auto;
+        width: auto;
+        
+    }
+    nav{
+        grid-template-columns: repeat(2,1fr);
+        flex-direction: column;
+        align-self: stretch;
+        grid-row-gap: 5px;
+    }
+    .menu{
+        height: auto;
+        width: auto;
+
+    }
+
+
+}
+@media(min-width: 600px)
+{
+
+    header{
+        height: auto;
+        width: auto;
+    }
+    .contenedorCuerpo{
+        margin: 0%;
+  
+    }
+    body{
+        height: auto;
+        width: auto;
+    }
+    nav{
+        flex-direction: column;
+        align-self: stretch;
+        grid-row-gap: 5px;
+    }
+    .menu{
+            height: auto;
+            width: auto;
+
+        }
+
+    
+}
+
+@media (min-width: 768px)
+{
+
+.contenedorCuerpo{
+    margin: 0%;
+    width: auto;
+    grid-template-columns: 300px 400px;
+    flex-direction: column;
+}
+header{
+    height: auto;
+    width: auto;
+}
+body{
+    height: auto;
+    width: auto;
+}
+nav{
+    height: auto;
+    width: auto;
+    flex-direction: column;
+}
+}
+
+@media (min-width: 1024px)
+{
+
+}
+
+/*------------------------------------------------Fin Media--------------------------------------*/
+
+.contenedorPag{
+    display: grid;
+}
+
+header{
+    height: 200px;
+    width: auto;
+    background-color: rgb(27, 27, 114);
+    
+
+}
+
+/*Nombre Empresa*/
+.titulo {
+    padding-top: 30px;
+    letter-spacing: 5px;
+    font-family: 'Righteous', cursive;
+    font-size: 70px;
+    font-style: normal;
+    text-align: center; 
+    letter-spacing: 10px;
+}
+.titulo a{
+    text-decoration: none !important; /*Debido a Bootstrap*/
+    color: white !important;
+}
+/*Animacion Titulo*/
+.titulo {
+    animation: fadeIn;
+    animation-duration: 5s;   
+    }
+    
+
+/*Menu*/
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: -10px;
+    align-items: baseline;
+}
+.listaEnc{
+    display: inline-block;
+    list-style-type: none;
+    font-size: 0;
+}
+
+.listaEnc li{
+    display: inline-block;
+    position: relative;
+    font-size: 30px;
+    border: 1px solid transparent;
+    
+}
+
+.listaEnc li a {
+    color: black;
+    padding: 1rem;
+    text-decoration: none;
+    font-family: 'Baloo Chettan 2', cursive;
+}
+
+.listaEnc li a:hover {
+    color: #e4b77c;
+    transition: background-color .5s;
+    text-decoration: none;
+    
+}
+/*Sub menu*/
+.listaSubmenu{
+    position: absolute;
+    width: 200px;
+    height: 0px;
+    transition: height 3s;
+    display: none;
+}
+
+ .listaEnc :hover .listaSubmenu{
+     height: 120px;
+     display: block;
+     background: linear-gradient(360deg, #176980 2%, #000851 100%);
+     color: blanchedalmond;
+     border-radius: 5px;
+     border: 1px solid blanchedalmond;
+        
+ }
+
+
+ .listaEnc :hover .listaSubmenu a {
+    color: blanchedalmond;
+    font-size: 20px;
+    text-decoration: none;
+
+}
+.listaEnc  .listaSubmenu :hover a {
+    color: blanchedalmond;
+    font-size: 22px;
+    text-decoration: underline;
+   
+}
+
+nav :hover.cabSubmenu a{
+    color: blanchedalmond;
+    text-decoration: none;
+    
+}
+nav  :hover.cabSubmenu{
+    border-radius: 5px;
+    border: 1px solid blanchedalmond;
+    background: rgb(27, 27, 114);
+    padding-top: 0px;
+    transition: background-color .5s;
+    
+}
+
+  
+
+
+/*Menu 2*/
+.menu2 {
+    list-style-type: none;
+    
+}
+
+.menu2 li{
+    display: inline-block;
+    position: relative;
+    align-items: stretch;
+   
+} 
+.menu2 li a {
+    font-size: 30px;
+    color: black;
+    padding: 1rem;
+    text-decoration: none;
+    font-family: 'Baloo Chettan 2', cursive;
+}
+.menu2 li a:hover {
+    color: #e4b77c;
+    transition: background-color .5s;
+    text-decoration: none;
+    
+}
+/*Buscador*/
+
+.contenedorBusc {
+    white-space: nowrap;
+    position: relative;
+    padding-top: 15px;
+    padding-left: 50px;
+}
+
+#buscar {
+    width: 200px;
+    height: 25px;
+    background: #3c507c;
+    border: none;
+    font-size: 12pt;
+    float: right;
+    color: #fdfdfd;
+    padding-left: 45px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.icono {
+    padding-left: 10px;
+    float: right;
+    
+}
+
+/*Cuerpo*/
+.contenedorCuerpo{
+    display: grid;
+    grid-template-areas: 
+    "CTA sec1"
+    "sec2 sec1"
+    "sec2 sec1"
+    ;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 450px auto auto;
+    margin-top: 40px;
+    background-image: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
+    text-align: center;  
+
+}
+.cuerpoCTA{
+    grid-area: CTA;
+}
+
+.cuerpoCTA h3{
+    color: rgb(255, 255, 255);
+    font-size: 35px;
+    margin-top: 15px;
+    text-align: center;
+  
+}
+.contenedorCuerpo iframe{
+    align-self: center;
+    border: solid 0.5px;
+    border-radius: 10px;
+    background-color: rgb(22, 23, 42);
+    opacity: 0.8;
+    margin-top: 40px;
+    padding: 5px;
+}
+
+.contenedorCuerpo :hover iframe{
+    transition: 0.3s;
+    opacity: 1;
+    transform: scale(1.1,1.1);
+}
+
+/*Secciones*/
+.sec1{
+    grid-area: sec1;
+    grid-template-rows: 900px;
+    margin-top: 40px;
+    background-image: linear-gradient(180deg, #176980 2%, #000851 100%);
+    background-color: rgb(16, 35, 71);
+}
+.sec1 p{
+    margin-bottom: 100px;
+    font-size: 16px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+/*Tipografia Encabezados*/
+h2, h3{
+    font-family: 'Trispace', sans-serif
+}
+
+.art1 h2{
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    text-align: center;
+    
+}
+/*Animacion Articulo1*/
+.art1 h2 {
+    animation: lightSpeedInRight;
+    animation-duration: 3s;   
+    }
+
+.art1 {
+    padding: 1em;
+    width: 350px;
+    font-size: 20px;
+    
+}
+
+.art1 img{
+    margin-top: 10px;
+    margin-left: 45px;
+    margin-bottom: 10px;
+    width: inherit;
+    height: inherit;
+}
+
+
+.sec2{
+    grid-area: sec2;
+    margin: 0;
+    grid-row-gap: 5px;
+    background-image: linear-gradient(180deg, #06012e 2%,#176980 100%);
+}
+
+.sec2 p{
+    font-size: 16px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 10px;
+}
+
+.art2 h2{
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    text-align: center;
+}
+
+/*Animacion Articulo2*/
+.art2 h2 {
+    animation: lightSpeedInLeft;
+    animation-duration: 3s;   
+    }
+
+.art2{
+    padding: 1em;
+    width: 350px;
+    font-size: 20px;
+}
+
+.art2 img{
+    margin-top: 10px;
+    margin-left: 45px;
+    margin-bottom: 10px;
+    width: inherit;
+    height: inherit;
+}
+
+
+
+
+footer{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    border-style: solid;
+    justify-content: center;
+    background-image:linear-gradient(to right, rgba(255,255,255,1),rgba(255,255,255,0)), url("/Front/Images/grass.jpg");
+    background-position: 50% 25vh;
+
+}
+
+
+
+footer h6{
+    margin-top: 5px;
+    font-family: 'Baloo Chettan 2', cursive;
+    text-align: center;
+    align-items: center;
+
+}
+
+footer h6,
+footer h6 .links li {
+    display: inline-block;
+    align-items: center;
+    padding: 3px;
+    color: black;
+    
+}
+.links a{
+    font-size: 18px;
+    list-style-type: none;
+    text-decoration: none;
+}
+.links :hover {
+    color: #06012e;
+    text-shadow: 5px 2px 10px white;
+}
+
+.socialFooter{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1rem;
+    
+   
+    
+
+}
+.socialFooter img{
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+    padding: 6px;
+   
+}
+
+/*TEXTO GENERAL <p>*/
+.texto{
+    display: grid;
+    grid-template-columns: 700px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-align: justify;
+    justify-content: center;
+    font-weight: 2px;
+    font-size: 17px;
+}
+
+/*-------------------------------Pag autom----------------------------*/
+.contenedorAut{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 15%;
+    background-image: radial-gradient(white,slategray);
+}
+.contenedorAut h2{
+    text-align: center;
+    padding: 1rem;
+    color: rgb(26, 32, 110);
+    font-size: 35px;
+    font-weight: bold;
+    text-shadow: 2px 5px 5px #ccc;
+}
+
+.listaTipos {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    color: white;
+    background-color:rgba(29, 95, 161, 0.603);
+    font-family: 'Righteous', cursive;
+    padding: 3rem;
+    border-radius: 5%;
+    
+}
+
+.listaTipos h2{
+    color: black;
+    padding: 1rem;
+    margin-top: -30px;
+    text-shadow: 1px 1px 20px black;
+}
+.listaTipos li{
+    text-align: center;
+    justify-content: start;
+    list-style-position: inside;
+}
+.listaTipos dd{
+    margin-left: 100px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+/*Animacion Lista Titulo*/
+.listaTipos {
+    animation: bounceInUp;
+    animation-duration: 3s;   
+    }
+
+/*Animacion Lista Titulo*/
+.contenedorAut h2 {
+    animation: fadeOut;
+    animation-duration: 1s;
+    animation-delay: 0.9s;
+    
+    }
+
+/*-------------------------------Pag eco----------------------------*/
+.contenedorEco{
+    height: 833px;
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 15%;
+    background-image: radial-gradient(white,slategray);
+}
+
+.contenedorEco h2{
+    text-align: center;
+    padding: 1rem;
+    color: rgb(26, 32, 110);
+    font-size: 35px;
+    font-weight: bold;
+    text-shadow: 2px 5px 5px #ccc;
+}
+
+/*Animacion Lista Titulo*/
+.contenedorEco h2 {
+    animation: fadeOut;
+    animation-duration: 1s;
+    animation-delay: 0.9s;
+    
+    }
+
+/*-------------------------------Pag Productos----------------------------*/
+.contenedorProd{
+    min-height: 100vh;
+    display: grid;
+    flex-direction: row;
+    align-self: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 15%;
+    background-image: radial-gradient(white,slategray);
+
+    grid-template-areas: 
+    "titulo"
+    "cont"
+    "marcas"
+    ;
+    grid-template-rows: 250px 400px auto;
+}
+
+.contenedorProd h2{
+    grid-area: titulo;
+    text-align: center;
+    padding: 1rem;
+    color: rgb(26, 32, 110);
+    font-size: 35px;
+    font-weight: bold;
+    text-shadow: 2px 5px 5px #ccc;
+    
+}
+
+/*Animacion Lista Titulo*/
+.contenedorProd h2 {
+    animation: fadeOut;
+    animation-duration: 1s;
+    animation-delay: 0.9s;
+    
+    }
+
+.prodTable{
+    border: rgb(16, 35, 71);
+    text-align: left;
+    grid-area: cont;
+    width: 50%;
+    justify-self: center;
+    background-color:white ;
+    
+
+}
+
+.prodTable thead tr th{
+    border: 10px;
+    background-color:rgb(26, 32, 110) ;
+    border-bottom: solid 8px black;
+    text-align: center;
+    padding: 10px;
+    color: rgba(255, 255, 255, 0.774);
+    font-size: 1.5em;
+    font-family: 'Baloo Chettan 2', cursive;
+}
+.prodTable tbody tr td{
+    padding: 15px;
+    font-size: 1.2em;
+    font-family: 'Righteous', cursive;
+
+}
+.prodTable tbody tr:nth-child(odd){
+background-color: rgba(26, 87, 200, 0.507);
+
+}
+.contenedorProd p{
+    text-align: center;
+    font-size: 1.7em;
+    border-radius: 35%;
+    background-image: radial-gradient(rgba(4, 22, 124, 0.206),rgba(112, 128, 144, 0.203));
+}
+/*Carrusel*/
+.marcasProd{
+    grid-auto-columns: auto;
+    justify-self: center;
+    min-width: 100vh;
+}
+
+#carouselExampleControls{
+    justify-self: center;
+
+}
+
+.carousel-item img{
+    padding-left: 500px;
+    
+}
+
+/*-------------------------------Pag Nosotros----------------------------*/
+.contenedorNos{
+    padding-top: 200px;
+    min-height: 100vh;
+    display: grid;
+    flex-direction: row;
+    align-self: center;
+    margin-top: 20px;
+    margin-bottom: -100px;
+    border-radius: 15%;
+    background-image: radial-gradient(white,slategray);
+
+    grid-template-areas: 
+    "tex1"
+    "tex2"
+    "tex3"
+    ;
+    grid-template-rows: 250px 250px 250px;
+}
+
+.contenedorNos h3{
+    text-align: center;
+    padding: 1rem;
+    color: rgb(26, 32, 110);
+    font-size: 35px;
+    font-weight: bold;
+    text-shadow: 2px 5px 5px #ccc;
+    
+}
+
+.quienesNos{
+    grid-area: tex1;
+}
+.misionNos{
+    grid-area: tex2;
+}
+.visionNos{
+    grid-area: tex3;
+}
+
+/*-------------------------------Pag Contacto----------------------------*/
+
+.contenedorContacto{
+    padding-top: 100px;
+    min-height: 100vh;
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 15%;
+    background-image: radial-gradient(white,slategray);
+}
+.contenedorContacto h3{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    margin: 0px;
+}
+.contenedorContacto p{
+    text-align: center;
+    margin: 0px;
+    font-size: 25px;
+    align-self: baseline;
+}
+
+.titular{
+    margin-bottom: -20%;
+    height: 100px;
+}
+
+#form_contacto{
+    margin-top: -500px;
+
+}

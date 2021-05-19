@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap'); /*Titulo*/
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&family=Suez+One&display=swap'); /*Menu*/
+@import url('https://fonts.googleapis.com/css2?family=Trispace:wght@300&display=swap'); /*Encabezados*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap'); /*Texto*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh;
+    background-image:linear-gradient(to bottom, rgba(255,255,255,1), rgba(27, 27, 114, 0.897))
+}
+
+
+.contenedorPag{
+    display: grid;
+}
+ 
+header{
+    height: 200px;
+    width: auto;
+    background-color: rgb(27, 27, 114);
+    
+
+    /*Nombre Empresa*/
+    .titulo {
+        padding-top: 30px;
+        letter-spacing: 5px;
+        font-family: 'Righteous', cursive;
+        font-size: 70px;
+        font-style: normal;
+        text-align: center; 
+        letter-spacing: 10px;
+        /*Animacion Titulo*/
+        animation: fadeIn;
+        animation-duration: 5s;  
+
+            a{
+                text-decoration: none;
+                color: white;
+            }
+
+        }
+
+}
+  
+
+/*Menu*/
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: -10px;
+    align-items: baseline;
+    
+    .menu__listaEnc{
+        display: inline-block;
+        list-style-type: none;
+        font-size: 0;
+
+        li{
+            display: inline-block;
+            position: relative;
+            font-size: 30px;
+            border: 1px solid transparent;
+
+            a {
+                color: black;
+                padding: 1rem;
+                text-decoration: none;
+                font-family: 'Baloo Chettan 2', cursive;
+            }
+            
+            a:hover {
+                color: #e4b77c;
+                transition: background-color .5s;
+                text-decoration: none;
+                
+            }
+        }
+
+        /*Sub menu*/
+        .listaSubmenu{
+            position: absolute;
+            width: 200px;
+            height: 0px;
+            transition: height 3s;
+            display: none;
+        
+        }
+        :hover .listaSubmenu{
+            height: 120px;
+            display: block;
+            background: linear-gradient(360deg, #176980 2%, #000851 100%);
+            color: blanchedalmond;
+            border-radius: 5px;
+            border: 1px solid blanchedalmond;
+               
+            a {
+                color: blanchedalmond;
+                font-size: 20px;
+                text-decoration: none;
+            }
+            :hover a{
+                color: blanchedalmond;
+                font-size: 22px;
+                text-decoration: underline;
+                   
+             }
+            
+             
+        }
+
+            
+     
+    }
+ 
+
+    
+    /*Menu 2*/
+.menu__menu2 {
+    list-style-type: none;
+
+    li{
+        display: inline-block;
+        position: relative;
+        align-items: stretch;
+       
+        a {
+            font-size: 30px;
+            color: black;
+            padding: 1rem;
+            text-decoration: none;
+            font-family: 'Baloo Chettan 2', cursive;
+        }
+
+        a:hover {
+            color: #e4b77c;
+            transition: background-color .5s;
+            text-decoration: none;
+            
+        }
+    } 
+
+
+
+    }
+    /*Buscador*/
+    .menu__contenedorBusc {
+        white-space: nowrap;
+        position: relative;
+        padding-top: 15px;
+        padding-left: 50px;
+    
+
+        #buscar {
+            width: 200px;
+            height: 25px;
+            background: #3c507c;
+            border: none;
+            font-size: 12pt;
+            float: right;
+            color: #fdfdfd;
+            padding-left: 45px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+        }
+
+        .icono {
+            padding-left: 10px;
+            float: right;
+            
+        }
+    }
+  
+}
+
+/*!!!!!!!!---Problemas---!!!!!!!!*/
+nav :hover.cabSubmenu a{
+    color: blanchedalmond;
+    text-decoration: none;
+    
+}
+nav  :hover.cabSubmenu{
+    border-radius: 5px;
+    border: 1px solid blanchedalmond;
+    background: rgb(27, 27, 114);
+    padding-top: 0px;
+    transition: background-color .5s;
+    
+}
+
