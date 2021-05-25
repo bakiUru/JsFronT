@@ -27,6 +27,9 @@ header {
   height: 200px;
   width: auto;
   background-color: #1b1b72;
+  background-image: url(../Images/Header.jpg);
+  background-repeat: no-repeat;
+  text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.877);
   /*Nombre Empresa*/
 }
 

@@ -132,7 +132,7 @@ header{
     height: 200px;
     width: auto;
     background-color: rgb(27, 27, 114);
-    background-image: url(/Front/Images/Header.jpg);
+    background-image: url(../Images/Header.jpg);
     background-repeat: no-repeat;
     text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.877);
     
