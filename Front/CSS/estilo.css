@@ -297,6 +297,11 @@ nav  :hover.cabSubmenu{
     
 }
 
+.contenedorCuerpo h3, h2{
+    font-size: 55px;
+    text-shadow: 2px 5px 5px rgba(10, 25, 107, 0.507);
+}
+
 /*Cuerpo*/
 .contenedorCuerpo{
     display: grid;
