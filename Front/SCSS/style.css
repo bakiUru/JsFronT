@@ -211,8 +211,8 @@ footer {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-image: -webkit-gradient(linear, left top, right top, from(white), to(rgba(255, 255, 255, 0))), url("/Front/Images/grass.jpg");
-  background-image: linear-gradient(to right, white, rgba(255, 255, 255, 0)), url("/Front/Images/grass.jpg");
+  background-image: -webkit-gradient(linear, left top, right top, from(white), to(rgba(255, 255, 255, 0))), url("../Images/grass.jpg");
+  background-image: linear-gradient(to right, white, rgba(255, 255, 255, 0)), url("../Images/grass.jpg");
   background-position: 50% 25vh;
 }
 
@@ -291,6 +291,22 @@ h4, h3 {
           justify-content: center;
   font-weight: 2px;
   font-size: 17px;
+}
+
+.texto2 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 700px;
+      grid-template-columns: 700px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: "Open Sans Condensed", sans-serif;
+  text-align: justify;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: 4px;
+  font-size: 22px;
 }
 
 /*Variables*/
@@ -480,6 +496,149 @@ h4, h3 {
   text-align: end;
 }
 
+/*------------------------------- Index ----------------------------*/
+/*Cuerpo*/
+.contenedorCuerpo {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "CTA sec1" "sec2 sec1" "sec2 sec1";
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+  -ms-grid-rows: 450px auto auto;
+      grid-template-rows: 450px auto auto;
+  margin-top: 40px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#1CB5E0), to(#000851));
+  background-image: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
+  text-align: center;
+  /*Secciones*/
+  /*Tipografia Encabezados*/
+}
+
+.contenedorCuerpo iframe {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  border: solid 0.5px;
+  border-radius: 10px;
+  background-color: #16172a;
+  opacity: 0.8;
+  margin-top: 40px;
+  padding: 5px;
+}
+
+.contenedorCuerpo :hover iframe {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 1;
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+}
+
+.contenedorCuerpo .cuerpoCTA {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: CTA;
+}
+
+.contenedorCuerpo .cuerpoCTA h3 {
+  color: white;
+  font-size: 35px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.contenedorCuerpo .sec1 {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 2;
+  grid-area: sec1;
+  -ms-grid-rows: 900px;
+      grid-template-rows: 900px;
+  margin-top: 40px;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(2%, #176980), to(#000851));
+  background-image: linear-gradient(180deg, #176980 2%, #000851 100%);
+  background-color: #102347;
+}
+
+.contenedorCuerpo .sec1 p {
+  margin-bottom: 100px;
+  font-size: 16px;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.contenedorCuerpo h2, .contenedorCuerpo h3 {
+  font-family: 'Trispace', sans-serif;
+}
+
+.contenedorCuerpo .art1 {
+  padding: 1em;
+  width: 350px;
+  font-size: 20px;
+}
+
+.contenedorCuerpo .art1 h2 {
+  color: white;
+  font-size: 25px;
+  text-align: center;
+  /*Animacion Articulo1*/
+  -webkit-animation: lightSpeedInRight;
+          animation: lightSpeedInRight;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+.contenedorCuerpo .art1 img {
+  margin-top: 10px;
+  margin-left: 45px;
+  margin-bottom: 10px;
+  width: inherit;
+  height: inherit;
+}
+
+.contenedorCuerpo .sec2 {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: sec2;
+  margin: 0;
+  grid-row-gap: 5px;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(2%, #06012e), to(#176980));
+  background-image: linear-gradient(180deg, #06012e 2%, #176980 100%);
+}
+
+.contenedorCuerpo .sec2 p {
+  font-size: 16px;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 10px;
+}
+
+.contenedorCuerpo .art2 {
+  padding: 1em;
+  width: 350px;
+  font-size: 20px;
+}
+
+.contenedorCuerpo .art2 h2 {
+  color: white;
+  font-size: 25px;
+  text-align: center;
+  /*Animacion Articulo2*/
+  -webkit-animation: lightSpeedInLeft;
+          animation: lightSpeedInLeft;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+.contenedorCuerpo .art2 img {
+  margin-top: 10px;
+  margin-left: 45px;
+  margin-bottom: 10px;
+  width: inherit;
+  height: inherit;
+}
+
 /*-------------------------------Pag Login Registro----------------------------*/
 .login {
   background-image: url(../Images/grassLogin.jpg);
@@ -641,6 +800,335 @@ h4, h3 {
   .contenedor__login-register form {
     position: relative;
   }
+}
+
+/*-------------------------------Pag eco----------------------------*/
+.contenedorEco {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-radius: 15%;
+  background-image: radial-gradient(white, slategray);
+}
+
+.contenedorEco h2 {
+  text-align: center;
+  padding: 1rem;
+  color: #1a206e;
+  font-size: 35px;
+  font-weight: bold;
+  text-shadow: 2px 5px 5px #ccc;
+  /*Animacion Lista Titulo*/
+  -webkit-animation: fadeOut;
+          animation: fadeOut;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+
+/*-------------------------------Pag Productos----------------------------*/
+.contenedorProd {
+  min-height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-grid-row-align: center;
+      align-self: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-radius: 15%;
+  background-image: radial-gradient(white, slategray);
+      grid-template-areas: "titulo" "cont" "marcas";
+  -ms-grid-rows: 250px 400px auto;
+      grid-template-rows: 250px 400px auto;
+  /*Carrusel*/
+}
+
+.contenedorProd h2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: titulo;
+  text-align: center;
+  padding: 1rem;
+  color: #1a206e;
+  font-size: 35px;
+  font-weight: bold;
+  text-shadow: 2px 5px 5px #ccc;
+  /*Animacion Lista Titulo*/
+  -webkit-animation: fadeOut;
+          animation: fadeOut;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+
+.contenedorProd .prodTable {
+  border: #102347;
+  text-align: left;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: cont;
+  width: 50%;
+      justify-self: center;
+  background-color: white;
+}
+
+.contenedorProd .prodTable thead tr th {
+  border: 10px;
+  background-color: #1a206e;
+  border-bottom: solid 8px black;
+  text-align: center;
+  padding: 10px;
+  color: rgba(255, 255, 255, 0.774);
+  font-size: 1.5em;
+  font-family: 'Baloo Chettan 2', cursive;
+}
+
+.contenedorProd .prodTable tbody tr td {
+  padding: 15px;
+  font-size: 1.2em;
+  font-family: 'Righteous', cursive;
+}
+
+.contenedorProd .prodTable tbody tr td tr:nth-child(odd) {
+  background-color: rgba(26, 87, 200, 0.507);
+}
+
+.contenedorProd p {
+  text-align: center;
+  font-size: 1.7em;
+  border-radius: 35%;
+  background-image: radial-gradient(rgba(4, 22, 124, 0.206), rgba(112, 128, 144, 0.203));
+}
+
+.contenedorProd .marcasProd {
+  grid-auto-columns: auto;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  min-width: 100vh;
+}
+
+.contenedorProd #carouselExampleControls {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.contenedorProd .carousel-item img {
+  padding-left: 500px;
+}
+
+/*-------------------------------Pag Nosotros----------------------------*/
+.contenedorNos {
+  padding-top: 200px;
+  min-height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-grid-row-align: center;
+      align-self: center;
+  margin-top: 20px;
+  margin-bottom: -100px;
+  border-radius: 15%;
+  background-image: radial-gradient(white, slategray);
+      grid-template-areas: "tex1" "tex2" "tex3";
+  -ms-grid-rows: 250px 250px 250px;
+      grid-template-rows: 250px 250px 250px;
+}
+
+.contenedorNos h3 {
+  text-align: center;
+  padding: 1rem;
+  color: #1a206e;
+  font-size: 35px;
+  font-weight: bold;
+  text-shadow: 2px 5px 5px #ccc;
+}
+
+.contenedorNos .quienesNos {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: tex1;
+}
+
+.contenedorNos .misionNos {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: tex2;
+}
+
+.contenedorNos .visionNos {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: tex3;
+}
+
+/*-------------------------------Pag Contacto----------------------------*/
+.contenedorContacto {
+  padding-top: 100px;
+  min-height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-radius: 15%;
+  background-image: radial-gradient(white, slategray);
+}
+
+.contenedorContacto h3 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-align: center;
+  margin: 0px;
+}
+
+.contenedorContacto p {
+  text-align: center;
+  margin: 0px;
+  font-size: 25px;
+  -ms-flex-item-align: baseline;
+      align-self: baseline;
+}
+
+.contenedorContacto .titular {
+  margin-bottom: -20%;
+  height: 100px;
+}
+
+.contenedorContacto #form_contacto {
+  margin-top: -500px;
+}
+
+/*-------------------------------Pag autom----------------------------*/
+.contenedorAut {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-radius: 15%;
+  background-image: radial-gradient(white, slategray);
+}
+
+.contenedorAut h2 {
+  text-align: center;
+  padding: 1rem;
+  color: #1a206e;
+  font-size: 35px;
+  font-weight: bold;
+  text-shadow: 2px 5px 5px #ccc;
+  /*Animacion Lista Titulo*/
+  -webkit-animation: fadeOut;
+          animation: fadeOut;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+
+.contenedorAut .listaTipos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 15px;
+  color: white;
+  background-color: rgba(29, 95, 161, 0.603);
+  font-family: 'Righteous', cursive;
+  padding: 3rem;
+  border-radius: 5%;
+  /*Animacion Lista Titulo*/
+  -webkit-animation: bounceInUp;
+          animation: bounceInUp;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+.contenedorAut .listaTipos h2 {
+  color: black;
+  padding: 1rem;
+  margin-top: -30px;
+  text-shadow: 1px 1px 20px black;
+}
+
+.contenedorAut .listaTipos li {
+  text-align: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  list-style-position: inside;
+}
+
+.contenedorAut .listaTipos dd {
+  margin-left: 100px;
+  text-align: center;
+  color: white;
+}
+
+/*-------------------------------Pag eco----------------------------*/
+.contenedorEco {
+  height: 833px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-radius: 15%;
+  background-image: radial-gradient(white, slategray);
+}
+
+.contenedorEco h2 {
+  text-align: center;
+  padding: 1rem;
+  color: #1a206e;
+  font-size: 35px;
+  font-weight: bold;
+  text-shadow: 2px 5px 5px #ccc;
+}
+
+/*Animacion Lista Titulo*/
+.contenedorEco h2 {
+  -webkit-animation: fadeOut;
+          animation: fadeOut;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
 }
 
 /*-------------------------------Pag Extra----------------------------*/

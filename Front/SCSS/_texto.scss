@@ -29,3 +29,16 @@ h4, h3
     font-size: 17px;
 }
 
+.texto2{
+    display: grid;
+    grid-template-columns: 700px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: $fuente;
+    text-align: justify;
+    justify-content: center;
+    font-weight: 4px;
+    font-size: 22px;
+
+}
+
