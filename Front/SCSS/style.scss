@@ -3,6 +3,14 @@
 @import "footer";
 @import "texto";
 
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: grid;
+}
 
 
 /*Variables*/
@@ -166,6 +174,7 @@ $fondoError404:url(../Images/e4041.jpg);
     
     .contenedorSist__inf{
         grid-area: info;
+        
         h3{
             font-size: 35px;
             text-shadow: 2px 5px 5px rgba(10, 25, 107, 0.507);
@@ -205,6 +214,7 @@ $fondoError404:url(../Images/e4041.jpg);
         opacity: 0.8;
         margin-top: 40px;
         padding: 5px;
+        
     }
 
     :hover iframe{
@@ -492,9 +502,15 @@ $fondoError404:url(../Images/e4041.jpg);
 /*-------------------------------Pag eco----------------------------*/
 .contenedorEco{
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-content: stretch;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 1fr 2fr 2fr 1fr;
+    grid-template-areas: ". row1 ."
+                         ". row2 ."
+                         ". row3 ."
+                         ". banner .";
+    justify-items: center;
+    grid-gap: 1em;
     margin-top: 20px;
     margin-bottom: 10px;
     border-radius: 15%;
@@ -512,14 +528,39 @@ $fondoError404:url(../Images/e4041.jpg);
         animation-duration: 1s;
         animation-delay: 0.9s;
     }
+
+    .contenedorEco__tex1{
+        grid-area: row1;
+        
+    }
+    .contenedorEco__tex2{
+        grid-area: row2;
+        
+    }
+
+    .contenedorEco__tex3{
+        grid-area: row3;
+        
+    }
+
+    .contenedorEco__banner{
+        grid-area: banner;
+        
+        img{
+            padding-left: 37%;
+            margin-right: auto;
+            margin-left: auto;
+        
+        }
+           
+    }
 }
 
 /*-------------------------------Pag Productos----------------------------*/
 .contenedorProd{
     min-height: 100vh;
     display: grid;
-    flex-direction: row;
-    align-self: center;
+   
     margin-top: 20px;
     margin-bottom: 10px;
     border-radius: 15%;
@@ -528,12 +569,14 @@ $fondoError404:url(../Images/e4041.jpg);
     grid-template-areas: 
     "titulo"
     "cont"
+    "marcast"
     "marcas"
     ;
-    grid-template-rows: 250px 400px auto;
+    grid-template-rows: 250px 400px 250px auto;
 
     h2{
         grid-area: titulo;
+        grid-gap: 1em;
         text-align: center;
         padding: 1rem;
         color: rgb(26, 32, 110);
@@ -547,10 +590,11 @@ $fondoError404:url(../Images/e4041.jpg);
         
     }
     .prodTable{
+        grid-area: cont;
         border: rgb(16, 35, 71);
         text-align: left;
-        grid-area: cont;
         width: 50%;
+        margin-top: -20px;
         justify-self: center;
         background-color:white ;
         
@@ -578,30 +622,38 @@ $fondoError404:url(../Images/e4041.jpg);
     
     }
 
-    p{
-        text-align: center;
-        font-size: 1.7em;
-        border-radius: 35%;
-        background-image: radial-gradient(rgba(4, 22, 124, 0.206),rgba(112, 128, 144, 0.203));
-    }
+
 
     /*Carrusel*/
     .marcasProd{
+        grid-area: marcas;
         grid-auto-columns: auto;
         justify-self: center;
         min-width: 100vh;
+
+        .marcasProd__tit{
+            grid-area: marcast;
+            height: 150px;
+
+            p{
+                text-align: center;
+                font-size: 1.7em;
+                border-radius: 35%;
+                background-image: radial-gradient(rgba(4, 22, 124, 0.206),rgba(112, 128, 144, 0.203));
+            }
+        }
+    
+
+        #carouselExampleControls{
+            justify-self: center;
+
+        }
+
+        .carousel-item img{
+            padding-left: 500px;
+            
+        }
     }
-
-    #carouselExampleControls{
-        justify-self: center;
-
-    }
-
-    .carousel-item img{
-        padding-left: 500px;
-        
-    }
-
 }
 
 /*-------------------------------Pag Nosotros----------------------------*/
@@ -641,16 +693,16 @@ $fondoError404:url(../Images/e4041.jpg);
     }
     .visionNos{
         grid-area: tex3;
+     
     }
 }
 
 /*-------------------------------Pag Contacto----------------------------*/
 
 .contenedorContacto{
-    padding-top: 100px;
+    padding-top: 50px;
     min-height: 100vh;
     display: grid;
-    flex-direction: column;
     justify-content: center;
     margin-top: 20px;
     margin-bottom: 10px;
@@ -741,7 +793,7 @@ $fondoError404:url(../Images/e4041.jpg);
 
 /*-------------------------------Pag eco----------------------------*/
 .contenedorEco{
-    height: 833px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-content: stretch;
@@ -749,32 +801,43 @@ $fondoError404:url(../Images/e4041.jpg);
     margin-bottom: 10px;
     border-radius: 15%;
     background-image: radial-gradient(white,slategray);
-}
 
-.contenedorEco h2{
-    text-align: center;
-    padding: 1rem;
-    color: rgb(26, 32, 110);
-    font-size: 35px;
-    font-weight: bold;
-    text-shadow: 2px 5px 5px #ccc;
-}
+        h2{
+            text-align: center;
+            padding: 1rem;
+            color: rgb(26, 32, 110);
+            font-size: 35px;
+            font-weight: bold;
+            text-shadow: 2px 5px 5px #ccc;
+            /*Animacion Lista Titulo*/
+            animation: fadeOut;
+            animation-duration: 1s;
+            animation-delay: 0.9s;
+        }
 
-/*Animacion Lista Titulo*/
-.contenedorEco h2 {
-    animation: fadeOut;
-    animation-duration: 1s;
-    animation-delay: 0.9s;
-    
+    .contenedorEco__banner{
+        margin: auto ;
+        padding: auto;
+        
+            img{
+                padding: 0;
+                padding-left: 5%;
+            }
+
     }
+}
+
+
+
 
 
 /*-------------------------------Pag Extra----------------------------*/
 .contenedorExt{
     padding-top: 200px;
     min-height: 100vh;
+    position: relative;
     display: grid;
-    flex-direction: column;
+    grid-gap: 1em;
     justify-content: center;
     margin-top: 20px;
     margin-bottom: 10px;
@@ -817,6 +880,7 @@ $fondoError404:url(../Images/e4041.jpg);
     text-align: left;
     grid-area: cont;
     margin-top: -150px;
+    margin-bottom: 50px;
     width: 50%;
     justify-self: center;
     background-color:white ;

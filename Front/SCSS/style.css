@@ -54,6 +54,21 @@ header .titulo a {
 }
 
 /*Menu*/
+@media screen and (max-width: 800px) {
+  nav {
+    width: 80%;
+    height: 100%;
+    background-color: blue;
+    margin: 0;
+    position: fixed;
+  }
+  nav .menu__listaEnc li {
+    display: block;
+    float: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+}
+
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -162,7 +177,7 @@ nav .menu__menu2 li a:hover {
 nav .menu__contenedorBusc {
   white-space: nowrap;
   position: relative;
-  padding-top: 15px;
+  padding-top: 20px;
   padding-left: 50px;
 }
 
@@ -179,7 +194,11 @@ nav .menu__contenedorBusc #buscar {
 }
 
 nav .menu__contenedorBusc .icono {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-left: 10px;
+  padding-top: 5px;
   float: right;
 }
 
@@ -307,6 +326,16 @@ h4, h3 {
           justify-content: center;
   font-weight: 4px;
   font-size: 22px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
 }
 
 /*Variables*/
@@ -805,15 +834,15 @@ h4, h3 {
 /*-------------------------------Pag eco----------------------------*/
 .contenedorEco {
   min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-line-pack: stretch;
-      align-content: stretch;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 33% 33% 33%;
+      grid-template-columns: 33% 33% 33%;
+  -ms-grid-rows: 1fr 2fr 2fr 1fr;
+      grid-template-rows: 1fr 2fr 2fr 1fr;
+      grid-template-areas: ". row1 ." ". row2 ." ". row3 ." ". banner .";
+  justify-items: center;
+  grid-gap: 1em;
   margin-top: 20px;
   margin-bottom: 10px;
   border-radius: 15%;
@@ -836,24 +865,48 @@ h4, h3 {
           animation-delay: 0.9s;
 }
 
+.contenedorEco .contenedorEco__tex1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: row1;
+}
+
+.contenedorEco .contenedorEco__tex2 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: row2;
+}
+
+.contenedorEco .contenedorEco__tex3 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: row3;
+}
+
+.contenedorEco .contenedorEco__banner {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: banner;
+}
+
+.contenedorEco .contenedorEco__banner img {
+  padding-left: 37%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 /*-------------------------------Pag Productos----------------------------*/
 .contenedorProd {
   min-height: 100vh;
   display: -ms-grid;
   display: grid;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-grid-row-align: center;
-      align-self: center;
   margin-top: 20px;
   margin-bottom: 10px;
   border-radius: 15%;
   background-image: radial-gradient(white, slategray);
-      grid-template-areas: "titulo" "cont" "marcas";
-  -ms-grid-rows: 250px 400px auto;
-      grid-template-rows: 250px 400px auto;
+      grid-template-areas: "titulo" "cont" "marcast" "marcas";
+  -ms-grid-rows: 250px 400px 250px auto;
+      grid-template-rows: 250px 400px 250px auto;
   /*Carrusel*/
 }
 
@@ -861,6 +914,7 @@ h4, h3 {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: titulo;
+  grid-gap: 1em;
   text-align: center;
   padding: 1rem;
   color: #1a206e;
@@ -877,12 +931,13 @@ h4, h3 {
 }
 
 .contenedorProd .prodTable {
-  border: #102347;
-  text-align: left;
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: cont;
+  border: #102347;
+  text-align: left;
   width: 50%;
+  margin-top: -20px;
       justify-self: center;
   background-color: white;
 }
@@ -908,26 +963,36 @@ h4, h3 {
   background-color: rgba(26, 87, 200, 0.507);
 }
 
-.contenedorProd p {
-  text-align: center;
-  font-size: 1.7em;
-  border-radius: 35%;
-  background-image: radial-gradient(rgba(4, 22, 124, 0.206), rgba(112, 128, 144, 0.203));
-}
-
 .contenedorProd .marcasProd {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: marcas;
   grid-auto-columns: auto;
   -ms-grid-column-align: center;
       justify-self: center;
   min-width: 100vh;
 }
 
-.contenedorProd #carouselExampleControls {
+.contenedorProd .marcasProd .marcasProd__tit {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: marcast;
+  height: 150px;
+}
+
+.contenedorProd .marcasProd .marcasProd__tit p {
+  text-align: center;
+  font-size: 1.7em;
+  border-radius: 35%;
+  background-image: radial-gradient(rgba(4, 22, 124, 0.206), rgba(112, 128, 144, 0.203));
+}
+
+.contenedorProd .marcasProd #carouselExampleControls {
   -ms-grid-column-align: center;
       justify-self: center;
 }
 
-.contenedorProd .carousel-item img {
+.contenedorProd .marcasProd .carousel-item img {
   padding-left: 500px;
 }
 
@@ -981,14 +1046,10 @@ h4, h3 {
 
 /*-------------------------------Pag Contacto----------------------------*/
 .contenedorContacto {
-  padding-top: 100px;
+  padding-top: 50px;
   min-height: 100vh;
   display: -ms-grid;
   display: grid;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1096,7 +1157,7 @@ h4, h3 {
 
 /*-------------------------------Pag eco----------------------------*/
 .contenedorEco {
-  height: 833px;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1119,10 +1180,7 @@ h4, h3 {
   font-size: 35px;
   font-weight: bold;
   text-shadow: 2px 5px 5px #ccc;
-}
-
-/*Animacion Lista Titulo*/
-.contenedorEco h2 {
+  /*Animacion Lista Titulo*/
   -webkit-animation: fadeOut;
           animation: fadeOut;
   -webkit-animation-duration: 1s;
@@ -1131,16 +1189,24 @@ h4, h3 {
           animation-delay: 0.9s;
 }
 
+.contenedorEco .contenedorEco__banner {
+  margin: auto;
+  padding: auto;
+}
+
+.contenedorEco .contenedorEco__banner img {
+  padding: 0;
+  padding-left: 5%;
+}
+
 /*-------------------------------Pag Extra----------------------------*/
 .contenedorExt {
   padding-top: 200px;
   min-height: 100vh;
+  position: relative;
   display: -ms-grid;
   display: grid;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  grid-gap: 1em;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1192,6 +1258,7 @@ h4, h3 {
   -ms-grid-column: 1;
   grid-area: cont;
   margin-top: -150px;
+  margin-bottom: 50px;
   width: 50%;
   -ms-grid-column-align: center;
       justify-self: center;

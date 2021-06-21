@@ -51,6 +51,31 @@ header{
 
 /*Menu*/
 
+//Media
+@media screen and (min-width: 320px){
+
+}
+
+@media screen and (max-width: 800px){
+    nav {
+        width: 80%;
+        height: 100%;
+        background-color: blue;
+        margin: 0;
+        position: fixed;
+
+        .menu__listaEnc{
+
+            li{
+                display: block;
+                float: none;
+                border-bottom: 1px solid rgba(255,255,255,.3);
+            }
+        }
+        
+    }
+}
+
 nav{
     display: flex;
     flex-direction: row;
@@ -154,7 +179,7 @@ nav{
     .menu__contenedorBusc {
         white-space: nowrap;
         position: relative;
-        padding-top: 15px;
+        padding-top: 20px;
         padding-left: 50px;
     
 
@@ -173,7 +198,9 @@ nav{
         }
 
         .icono {
+            align-items: center;
             padding-left: 10px;
+            padding-top: 5px;
             float: right;
             
         }
